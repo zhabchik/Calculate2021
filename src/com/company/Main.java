@@ -8,6 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         Calculate2021 calc = new Calculate2021();
+        calc.run();
     }
 }
 
@@ -93,9 +94,17 @@ class Calculate2021 {
     boolean isRim1 = false;
     boolean isRim2 = false;
 
-    // Конструктор
+    /**
+     * Создать калькулятор
+     */
     public Calculate2021() {
+        // Конструктор
+    }
 
+    /**
+     * Запустить калькулятор
+     */
+    public void run() {
         while (true)
         {
             isFail = false;
@@ -178,8 +187,6 @@ class Calculate2021 {
         }
 
     }
-
-
 
     void parserDataCmd(List<String> data){
         num1 = getNum(data.get(1));
