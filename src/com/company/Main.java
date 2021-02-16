@@ -5,12 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Calculate2021 calc = new Calculate2021();
         calc.run();
     }
 }
-
-
-
-
