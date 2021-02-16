@@ -26,7 +26,7 @@ class Calculate2021 {
     /**
      * Запустить калькулятор
      */
-    public void run() {
+    public void run() throws Exception {
         while (true)
         {
             isFail = false;         // Флаг ошибки
@@ -68,8 +68,7 @@ class Calculate2021 {
 
             // Проверяются ограничения для чисел
             if(num1 < 0 || num1 > 10 || num2 <0 || num2 > 10){
-                System.out.println("Введенный числа должны быть в диапазоне от 0 до 10");
-                return;
+                throw new Exception("Введенный числа должны быть в диапазоне от 0 до 10");
             }
 
             // Тут происходят базовые операция с уже подготовленными числами
@@ -83,13 +82,11 @@ class Calculate2021 {
             // Проверка на то, явлвются ли оба числа греческими или арабскими числами
             if (isRim1 && !isRim2)
             {
-                System.out.println("Не верный формат.");
-                return;
+                throw new Exception("Не верный формат.");
             }
             if (!isRim1 && isRim2)
             {
-                System.out.println("Не верный формат.");
-                return;
+                throw new Exception("Не верный формат.");
             }
 
             // Если два числа явяллись римскими то ответ будет выведен в римские символы
@@ -108,7 +105,7 @@ class Calculate2021 {
                         // от числа вычитаем его эквивалент в массиве арабском
                         resultOperation = resultOperation - mas1[i];
                         // в строку записываем его римское значение
-                        s = s + mas2[i];
+                        s += mas2[i];
                     }
                     else {
                         i++;
